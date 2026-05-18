@@ -3,206 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Досье: Ханк (HUNK) | Resident Evil</title>
+    <title>SCP Foundation // Проект «ФЕНРИР» — Ню-7</title>
     <style>
         :root {
-            --bg-color: #0b0c10;
-            --panel-bg: #1f2833;
-            --accent-color: #c5a059;
-            --text-color: #c5c6c7;
-            --danger-color: #8b0000;
-            --neon-red: #ff3333;
+            --bg-main: #121417;
+            --panel-bg: #1a1d24;
+            --accent-yellow: #f5b041;
+            --accent-orange: #e67e22;
+            --text-light: #eaeded;
+            --text-dark: #2c3e50;
+            --border-heavy: #2e4053;
+            --alert-red: #c0392b;
         }
 
         body {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
         header {
-            background: linear-gradient(180deg, #000 0%, var(--panel-bg) 100%);
-            border-bottom: 3px solid var(--danger-color);
+            background-color: #0b0c10;
+            border-bottom: 4px solid var(--accent-yellow);
             padding: 30px 20px;
             text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .scp-logo {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
         }
 
         header h1 {
-            color: var(--neon-red);
-            font-size: 2.5em;
             margin: 0;
-            letter-spacing: 5px;
+            font-size: 2.2em;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+            color: #ffffff;
         }
 
-        header p {
-            color: var(--accent-color);
-            font-style: italic;
-            margin: 10px 0 0 0;
+        header h1 span {
+            color: var(--accent-yellow);
         }
 
         .container {
-            max-width: 1000px;
-            margin: 30px auto;
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        .grid {
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 30px;
         }
 
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: 2fr 1fr;
+        @media (min-width: 992px) {
+            .grid-layout {
+                grid-template-columns: 3fr 1fr;
             }
         }
 
         section {
             background-color: var(--panel-bg);
-            border-left: 4px solid var(--accent-color);
-            padding: 25px;
-            margin-bottom: 20px;
+            border: 1px solid var(--border-heavy);
+            padding: 30px;
+            margin-bottom: 30px;
             border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         h2 {
-            color: var(--accent-color);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-            padding-bottom: 10px;
+            color: var(--accent-yellow);
+            font-size: 1.5em;
             margin-top: 0;
             text-transform: uppercase;
+            border-bottom: 2px solid var(--border-heavy);
+            padding-bottom: 10px;
         }
 
-        .profile-card {
-            background-color: #121821;
-            border: 1px solid var(--danger-color);
+        .warning-banner {
+            background-color: rgba(192, 57, 43, 0.15);
+            border: 1px solid var(--alert-red);
+            border-left: 6px solid var(--alert-red);
+            padding: 15px;
+            margin-bottom: 25px;
+            color: #f1948a;
+            font-size: 0.95rem;
+        }
+
+        .tech-specs {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .tech-specs td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .tech-specs td:first-child {
+            color: var(--accent-yellow);
+            font-weight: bold;
+            width: 40%;
+        }
+
+        .sub-system {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--accent-orange);
+        }
+
+        .sub-system h3 {
+            margin: 0 0 5px 0;
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        .status-panel {
+            background-color: #11141a;
+            border: 1px solid var(--border-heavy);
             padding: 20px;
             border-radius: 4px;
         }
 
-        .profile-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .profile-card li {
-            margin-bottom: 12px;
-            border-bottom: 1px dashed rgba(255,255,255,0.1);
-            padding-bottom: 5px;
-        }
-
-        .profile-card strong {
-            color: var(--neon-red);
-        }
-
-        .quote-box {
-            background-color: rgba(139, 0, 0, 0.1);
-            border: 1px solid var(--danger-color);
-            border-left: 5px solid var(--danger-color);
-            font-style: italic;
-            padding: 15px;
-            margin: 20px 0;
-        }
-
-        .status-badge {
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #2ecc71;
+            border-radius: 50%;
             display: inline-block;
-            background-color: var(--danger-color);
-            color: #fff;
-            padding: 5px 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: pulse 2s infinite;
+            margin-right: 10px;
+            box-shadow: 0 0 8px #2ecc71;
+        }
+
+        .terminal-text {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: #a6acaf;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            font-size: 0.8em;
-            color: #666;
-            border-top: 1px solid #222;
+            padding: 30px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            border-top: 1px solid var(--border-heavy);
             margin-top: 50px;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Досье: Агент U.S.S. "Ханк"</h1>
-        <p>Классификация: Секретно // Доступ ограничен сотрудниками Службы Безопасности Umbrella</p>
+        <div class="scp-logo">SCP Foundation Security Terminal</div>
+        <h1>Проект <span>«ФЕНРИР»</span> // Мод. Ню-7</h1>
     </header>
 
     <div class="container">
-        <div class="grid">
+        <div class="grid-layout">
+            
+            <!-- Основная техническая документация -->
             <main>
+                <div class="warning-banner">
+                    <strong>ВНИМАНИЕ:</strong> Данный документ содержит информацию об автономных боевых единицах класса «Таумиэль/Берилл». Доступ разрешен персоналу с уровнем допуска 4/Ню-7. Несанкционированное копирование карается введением меметического агента ликвидации.
+                </div>
+
                 <section>
-                    <h2>Общий обзор</h2>
-                    <p><strong>Ханк (HUNK)</strong> — один из самых загадочных, эффективных и безжалостных оперативников в истории игровой индустрии. Являясь командиром Альфа-команды Службы безопасности корпорации Umbrella (U.S.S.), он заслужил пугающее прозвище <strong>"Мрачный Жнец" (The Grim Reaper)</strong>. Это имя закрепилось за ним по одной причине: из каких бы катастрофических и смертоносных миссий он ни возвращался, он всегда оставался единственным выжившим членом своего отряда.</p>
+                    <h2>1. Назначение и Концепция</h2>
+                    <p><strong>Боевой андроид проекта «Фенрир»</strong> — это полностью автономная или дистанционно пилотируемая тактическая единица тяжелой поддержки, разработанная для нужд Мобильной Оперативной Группы <strong>Ню-7 «Удар Молота» (Nu-7 "Hammer Down")</strong>. </p>
+                    <p>Основное назначение проекта — ведение боевых действий высокой интенсивности в условиях полного разрушения условий содержания (Сценарии класса К). «Фенрир» спроектирован для прямого подавления крупных агрессивных биоорганических аномалий (Б.О.О.), подавления мятежей на подземных Объектах Фонда и удержания периметра в зонах применения ОМП, где использование живой силы МОГ невозможно из-за летальной радиации или когнитивных угроз.</p>
+                </section>
+
+                <section>
+                    <h2>2. Конструктивные особенности и Подсистемы</h2>
                     
-                    <div class="quote-box">
-                        "Это война. Выживание — твоя обязанность." — Ханк
+                    <div class="sub-system">
+                        <h3>Экзо-каркас и Бронирование</h3>
+                        <p>Основой андроида является эндоскелет из титан-вольфрамового сплава с гидравлическими приводами повышенного давления. Внешняя броня представляет собой многослойный композит, включающий обедненный уран, углеродные нанотрубки и керамические пластины, способные выдержать прямое попадание из 30-мм автоматической пушки или близкий взрыв фугасного снаряда.</p>
+                    </div>
+
+                    <div class="sub-system">
+                        <h3>Сенсорный комплекс и ИИ</h3>
+                        <p>Нейросеть тактического класса «Hugin-II» способна обрабатывать до 400 боевых целей одновременно. Андроид оснащен панорамным лидар-комплексом, тепловизионными матрицами высокого разрешения (диапазон видимости увеличен до 3000м в любых погодных условиях), а также датчиками фиксации Юм-сдвигов для раннего обнаружения скульпторов реальности.</p>
+                    </div>
+
+                    <div class="sub-system">
+                        <h3>Интегрированное вооружение</h3>
+                        <p>В правое предплечье встроен 12.7-мм пулемет Гаatling с беззвеньевой подачей патронов. Левое предплечье модифицировано под установку модульного плазменного резака или пусковой установки для термобарических микро-ракет. Энергоснабжение осуществляется за счет компактного реактора на холодной плазме, рассчитанного на 72 часа непрерывного автономного боя.</p>
                     </div>
                 </section>
 
                 <section>
-                    <h2>Биография и Инцидент в Раккун-Сити</h2>
-                    <p>Прошлое Ханка окутано тайной. Известно, что он проходил подготовку на военном объекте на острове Рокфорт в 1996 году, где продемонстрировал феноменальные боевые навыки и хладнокровие.</p>
-                    <p>Его самой известной операцией стало изъятие образцов G-вируса в Раккун-Сити в сентябре 1998 года. Прорвавшись в подземную лабораторию «NEST», его отряд столкнулся с создателем вируса, доктором Уильямом Биркином. В ходе завязавшейся перестрелки Биркин был тяжело ранен, но успел ввести себе вирус, превратившись в неуправляемого мутанта. Монстр полностью уничтожил Альфа-команду Ханка. Сам Ханк был временно нокаутирован, но выжил. Придя в себя, он в одиночку пробился сквозь заполоненный зомби город, эвакуировался с образцом вируса и подтвердил статус абсолютной машины для выживания.</p>
-                </section>
-
-                <section>
-                    <h2>Психологический портрет</h2>
-                    <p>Ханк — абсолютный прагматик и стоик. Его не интересует идеология корпорации Umbrella, судьбы напарников или этическая сторона биологического оружия. Для него существует только одно — <strong>Выполнение Задания</strong>. </p>
-                    <ul>
-                        <li><strong>Полное отсутствие эмпатии:</strong> Он хладнокровно оставляет умирающих товарищей, если их спасение ставит под угрозу миссию.</li>
-                        <li><strong>Железная ментальная стабильность:</strong> Ханк не поддается панике даже в окружении сотен мутантов или при встрече с тиранами.</li>
-                        <li><strong>Профессиональная отрешенность:</strong> Скрывая лицо за противогазом с красными линзами, он полностью стирает свою человеческую индивидуальность, превращаясь в живой инструмент войны.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2>Боевой стиль и Снаряжение</h2>
-                    <p>Ханк владеет всеми видами огнестрельного оружия и является мастером ближнего боя (CQC). Его коронный прием — сворачивание шеи противника одним быстрым движением, что позволяет ему экономить боеприпасы.</p>
-                    <p>Стандартная экипировка включает в себя кастомный пистолет-пулемет, бронежилет высшего класса защиты и фирменный шлем со встроенным противогазом М40, который защищает его от токсичных газов и вирусных распылений, одновременно скрывая его эмоции.</p>
+                    <h2>3. Тактическое развертывание в составе МОГ Ню-7</h2>
+                    <p>Тактика «Удара Молота» подразумевает сброс единиц «Фенрир» с орбитальных или военно-транспортных самолетов непосредственно в эпицентр прорыва ОУС (Объектов Условий Содержания). Действуя в авангарде бронетанковых батальонов Ню-7, андроиды выполняют роль «живого щита» и огневого тарана.</p>
+                    <p>За счет встроенных систем защиты от когнитивных и ментальных угроз (скремблеры восприятия «Око Сехмет»), «Фенрир» невосприимчив к визуальным и звуковым аномальным воздействиям, которые мгновенно уничтожают или подчиняют человеческий персонал.</p>
                 </section>
             </main>
 
+            <!-- Тактико-технические характеристики (Боковое меню) -->
             <aside>
-                <div class="profile-card">
-                    <h2>Личное Дело</h2>
-                    <ul>
-                        <li><strong>Позывной:</strong> HUNK (Мрачный Жнец)</li>
-                        <li><strong>Настоящее имя:</strong> Засекречено</li>
-                        <li><strong>Возраст:</strong> Неизвестен</li>
-                        <li><strong>Рост:</strong> ~185 см</li>
-                        <li><strong>Организация:</strong> U.S.S. Alpha Team</li>
-                        <li><strong>Роль:</strong> Командир отряда / Специалист по изъятию</li>
-                        <li><strong>Статус:</strong> <span class="status-badge">Активен</span></li>
-                    </ul>
-                    <p style="font-size: 0.85em; color: #888; margin-top: 15px; text-align: center;">
-                        [ ДАННЫЕ ИЗВЛЕЧЕНЫ ИЗ АРХИВОВ UMBRELLA ]
-                    </p>
+                <div class="status-panel">
+                    <h2 style="font-size: 1.2em; border: none; margin-bottom: 15px;">Тех. Паспорт</h2>
+                    
+                    <div class="status-indicator">
+                        <span class="dot"></span>
+                        <span class="terminal-text" style="color: #2ecc71; font-weight: bold;">UNIT_STATUS: READY</span>
+                    </div>
+
+                    <table class="tech-specs">
+                        <tr>
+                            <td>Код единицы:</td>
+                            <td>БА-Ню7-«Фенрир»</td>
+                        </tr>
+                        <tr>
+                            <td>Высота / Масса:</td>
+                            <td>2.45 м / 820 кг</td>
+                        </tr>
+                        <tr>
+                            <td>Класс шасси:</td>
+                            <td>Тяжелое антропоморфное</td>
+                        </tr>
+                        <tr>
+                            <td>Энергоблок:</td>
+                            <td>ХЯС-Реактор «Arc-4»</td>
+                        </tr>
+                        <tr>
+                            <td>Защита от аномалий:</td>
+                            <td>Якорь Реальности Скрэнтона (мини)</td>
+                        </tr>
+                    </table>
+
+                    <div class="terminal-text" style="margin-top: 25px; padding-top: 15px; border-top: 1px dashed var(--border-heavy);">
+                        <span style="color: var(--accent-orange);">[ЛОГ СИНХРОНИЗАЦИИ]:</span> Подключение к спутниковой группировке МОГ Ню-7 установлено успешно. Загрузка баллистических матриц... 100%.
+                    </div>
                 </div>
             </aside>
+
         </div>
     </div>
 
     <footer>
-        &copy; Корпорация Umbrella. Отдел по связям с общественностью и безопасности. Все права защищены.
+        Строго конфиденциально. Свойство Фонда SCP. Нарушение режима секретности влечет за собой немедленное устранение.
     </footer>
 
 </body>
