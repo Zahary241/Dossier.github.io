@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Досье: Ханк (HUNK) | Resident Evil</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --panel-bg: #1f2833;
+            --accent-color: #c5a059;
+            --text-color: #c5c6c7;
+            --danger-color: #8b0000;
+            --neon-red: #ff3333;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(180deg, #000 0%, var(--panel-bg) 100%);
+            border-bottom: 3px solid var(--danger-color);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: var(--neon-red);
+            font-size: 2.5em;
+            margin: 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+        }
+
+        header p {
+            color: var(--accent-color);
+            font-style: italic;
+            margin: 10px 0 0 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        section {
+            background-color: var(--panel-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            padding-bottom: 10px;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+
+        .profile-card {
+            background-color: #121821;
+            border: 1px solid var(--danger-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .profile-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .profile-card li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .profile-card strong {
+            color: var(--neon-red);
+        }
+
+        .quote-box {
+            background-color: rgba(139, 0, 0, 0.1);
+            border: 1px solid var(--danger-color);
+            border-left: 5px solid var(--danger-color);
+            font-style: italic;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--danger-color);
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 50px;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Досье: Агент U.S.S. "Ханк"</h1>
+        <p>Классификация: Секретно // Доступ ограничен сотрудниками Службы Безопасности Umbrella</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <main>
+                <section>
+                    <h2>Общий обзор</h2>
+                    <p><strong>Ханк (HUNK)</strong> — один из самых загадочных, эффективных и безжалостных оперативников в истории игровой индустрии. Являясь командиром Альфа-команды Службы безопасности корпорации Umbrella (U.S.S.), он заслужил пугающее прозвище <strong>"Мрачный Жнец" (The Grim Reaper)</strong>. Это имя закрепилось за ним по одной причине: из каких бы катастрофических и смертоносных миссий он ни возвращался, он всегда оставался единственным выжившим членом своего отряда.</p>
+                    
+                    <div class="quote-box">
+                        "Это война. Выживание — твоя обязанность." — Ханк
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Биография и Инцидент в Раккун-Сити</h2>
+                    <p>Прошлое Ханка окутано тайной. Известно, что он проходил подготовку на военном объекте на острове Рокфорт в 1996 году, где продемонстрировал феноменальные боевые навыки и хладнокровие.</p>
+                    <p>Его самой известной операцией стало изъятие образцов G-вируса в Раккун-Сити в сентябре 1998 года. Прорвавшись в подземную лабораторию «NEST», его отряд столкнулся с создателем вируса, доктором Уильямом Биркином. В ходе завязавшейся перестрелки Биркин был тяжело ранен, но успел ввести себе вирус, превратившись в неуправляемого мутанта. Монстр полностью уничтожил Альфа-команду Ханка. Сам Ханк был временно нокаутирован, но выжил. Придя в себя, он в одиночку пробился сквозь заполоненный зомби город, эвакуировался с образцом вируса и подтвердил статус абсолютной машины для выживания.</p>
+                </section>
+
+                <section>
+                    <h2>Психологический портрет</h2>
+                    <p>Ханк — абсолютный прагматик и стоик. Его не интересует идеология корпорации Umbrella, судьбы напарников или этическая сторона биологического оружия. Для него существует только одно — <strong>Выполнение Задания</strong>. </p>
+                    <ul>
+                        <li><strong>Полное отсутствие эмпатии:</strong> Он хладнокровно оставляет умирающих товарищей, если их спасение ставит под угрозу миссию.</li>
+                        <li><strong>Железная ментальная стабильность:</strong> Ханк не поддается панике даже в окружении сотен мутантов или при встрече с тиранами.</li>
+                        <li><strong>Профессиональная отрешенность:</strong> Скрывая лицо за противогазом с красными линзами, он полностью стирает свою человеческую индивидуальность, превращаясь в живой инструмент войны.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Боевой стиль и Снаряжение</h2>
+                    <p>Ханк владеет всеми видами огнестрельного оружия и является мастером ближнего боя (CQC). Его коронный прием — сворачивание шеи противника одним быстрым движением, что позволяет ему экономить боеприпасы.</p>
+                    <p>Стандартная экипировка включает в себя кастомный пистолет-пулемет, бронежилет высшего класса защиты и фирменный шлем со встроенным противогазом М40, который защищает его от токсичных газов и вирусных распылений, одновременно скрывая его эмоции.</p>
+                </section>
+            </main>
+
+            <aside>
+                <div class="profile-card">
+                    <h2>Личное Дело</h2>
+                    <ul>
+                        <li><strong>Позывной:</strong> HUNK (Мрачный Жнец)</li>
+                        <li><strong>Настоящее имя:</strong> Засекречено</li>
+                        <li><strong>Возраст:</strong> Неизвестен</li>
+                        <li><strong>Рост:</strong> ~185 см</li>
+                        <li><strong>Организация:</strong> U.S.S. Alpha Team</li>
+                        <li><strong>Роль:</strong> Командир отряда / Специалист по изъятию</li>
+                        <li><strong>Статус:</strong> <span class="status-badge">Активен</span></li>
+                    </ul>
+                    <p style="font-size: 0.85em; color: #888; margin-top: 15px; text-align: center;">
+                        [ ДАННЫЕ ИЗВЛЕЧЕНЫ ИЗ АРХИВОВ UMBRELLA ]
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Корпорация Umbrella. Отдел по связям с общественностью и безопасности. Все права защищены.
+    </footer>
+
+</body>
+</html>
